@@ -18,7 +18,7 @@ const ADMIN_USERNAME = "Alex_Aditya";         // ← Your Telegram Username (wit
 // ──────────────────────────────────────────────
 
 const PORT        = process.env.PORT || 3000;
-const WEBHOOK_URL = process.env.WEBHOOK_URL || "";
+const WEBHOOK_URL = process.env.WEBHOOK_URL || "https://numinfoadvance-0b0794e77bce.herokuapp.com";
 const OWNER       = `@${ADMIN_USERNAME}`;
 
 // ── AUTO DELETE CONFIG ──────────────────────────
