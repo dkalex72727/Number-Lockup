@@ -10,12 +10,16 @@ const https           = require("https");
 const app = express();
 app.use(express.json({ limit: "1mb" }));
 
-// ── CONFIG ──────────────────────────────────
-const BOT_TOKEN   = process.env.BOT_TOKEN   || "";
-const MONGO_URI   = process.env.MONGO_URI   || "";
-const PORT        = process.env.PORT        || 3000;
+// ── 🔧 FIX HERE ──────────────────────────────
+const BOT_TOKEN   = "8908464362:AAG5Mko7CRBnHPZ0BKWPULmWEfLLtcCkCuc";     // ← Telegram Bot Token
+const MONGO_URI   = "mongodb+srv://alexaditya:alexaditya950@cluster0.7j1hfjk.mongodb.net/?appName=Cluster0";   // ← MongoDB Connection String
+const ADMIN_ID    = "8878702771";        // ← Your Telegram ID (number)
+const ADMIN_USERNAME = "Alex_Aditya";         // ← Your Telegram Username (without @)
+// ──────────────────────────────────────────────
+
+const PORT        = process.env.PORT || 3000;
 const WEBHOOK_URL = process.env.WEBHOOK_URL || "";
-const OWNER       = "@Alex_Aditya";
+const OWNER       = `@${ADMIN_USERNAME}`;
 
 // ── AUTO DELETE CONFIG ──────────────────────────
 let AUTO_DELETE_TIME = 120;
@@ -52,7 +56,7 @@ let CHANNELS = [
 
 const JOINED_STATUSES = new Set(["member","administrator","creator","restricted"]);
 
-let admins          = ["@rtfgamming"];
+let admins          = [`@${ADMIN_USERNAME}`];
 const userState     = new Map();
 const customTgData  = new Map();
 const customNumData = new Map();
@@ -2312,7 +2316,7 @@ async function handleAdminText(chatId, userId, text) {
     if (parts.length < 2) { await sendPlain(chatId, "❌  Usage: /removeadmin @username"); return; }
     const rem = parts[1].startsWith("@") ? parts[1] : `@${parts[1]}`;
     const match = admins.find(a => a.toLowerCase() === rem.toLowerCase());
-    if (match && match.toLowerCase() !== "@rtfgamming") { admins = admins.filter(a => a.toLowerCase() !== rem.toLowerCase()); await sendPlain(chatId, `✅  ${rem} ko hata diya.`); }
+    if (match && match.toLowerCase() !== `@${ADMIN_USERNAME.toLowerCase()}`) { admins = admins.filter(a => a.toLowerCase() !== rem.toLowerCase()); await sendPlain(chatId, `✅  ${rem} ko hata diya.`); }
     else if (match) { await sendPlain(chatId, "❌  Owner ko remove nahi kar sakte!"); }
     else { await sendPlain(chatId, `⚠️  ${rem} list me nahi hai.`); }
     return;
