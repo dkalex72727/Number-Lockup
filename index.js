@@ -27,12 +27,12 @@ const AUTO_DELETE_KEY = "auto_delete_time";
 
 // ── API URLs ──────────────────────────────────
 const DEFAULT_API_URLS = {
-  num:     "https://movements-invoice-amanda-victoria.trycloudflare.com/search/number?number={query}&key=mysecretkey123",
+  num:     "https://bronx-papa-27y2.onrender.com/api/custom/num?key=free&num={query}&key=mysecretkey123",
   deep:    "https://leakapi.suryajasoos.workers.dev/?query={query}",
-  tg:      "https://tgusertonum.suryajasoos.workers.dev/?username={query}",
-  adhar:   "https://aadharinfo.suryahacker.workers.dev/?aadhar={query}",
+  tg:      "https://tg-to-num-alex.vercel.app/api?key=Alex&type=uers&term={query}",
+  adhar:   "https://aadhar-api-alex.vercel.app/api?key=Alex&aadhaar={query}",
   upi:     "https://krish-osintoy.lovable.app/api/v1/upi?key=rtf-7e9m8w62cmqyrbgyfq4tnpln&upi={query}",
-  vehicle: "https://vehicle.suryahacker.workers.dev/fetch?query={query}",
+  vehicle: "https://alex-vehicle-api-ten.vercel.app/vehicle?key=Alex&rc={query}",
 };
 
 let apiUrls = { ...DEFAULT_API_URLS };
