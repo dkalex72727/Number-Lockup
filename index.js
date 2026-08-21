@@ -15,7 +15,7 @@ const BOT_TOKEN   = process.env.BOT_TOKEN   || "";
 const MONGO_URI   = process.env.MONGO_URI   || "";
 const PORT        = process.env.PORT        || 3000;
 const WEBHOOK_URL = process.env.WEBHOOK_URL || "";
-const OWNER       = "@RTFGAMMING";
+const OWNER       = "@Alex_Aditya";
 
 // ── AUTO DELETE CONFIG ──────────────────────────
 let AUTO_DELETE_TIME = 120;
